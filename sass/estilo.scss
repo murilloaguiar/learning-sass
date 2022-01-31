@@ -1,46 +1,9 @@
-/* Aninhamento e Referenciando seletor pai */
-#conteudo {
-    background: green;
-    padding: 15px;
+// @import '_variaveis.scss';
+// @import 'variaveis.scss';
+@import 'variaveis';
 
-    h1 {
-        color: black;
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        background: green;
     }
-
-    a {
-        color:red;
-
-        //indentificando que está atribuindo as configurações para o seletor pai
-        &:hover {
-            color: yellow;
-        }
-    }
-
-}
-
-/*Variaveis*/
-$cor-titulo: red;
-$tamanho-titulo: 20px;
-
-h2 {
-    color: $cor-titulo;
-}
-
-$cor-padrao: red;
-#rodape {
-    $cor-padrao: green; //escopo apenas do rodapé. Visível somente dentro do rodapé
-    background-color: $cor-padrao; //green
-}
-
-h2 {
-    color: $cor-padrao; //red
-}
-
-/*Interpolação*/
-$classe: red;
-$classe: vermelho;
-$color: color;
-
-.#{$classe}{ //vermelho 
-    #{$color}: $classe;
 }
